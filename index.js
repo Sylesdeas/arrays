@@ -10,6 +10,7 @@
  * getFirst([true,false,true]); // true
  */
 export function getFirst(array) {
+  return array[0];
   // TODO
 }
 
@@ -25,6 +26,7 @@ export function getFirst(array) {
  * getLast([true,false,true]); // true
  */
 export function getLast(array) {
+  return array[array.length - 1];
   // TODO
 }
 
@@ -42,6 +44,9 @@ export function getLast(array) {
  * getFirstLast([42]); // [42]
  */
 export function getFirstLast(array) {
+  if (array.length === 0) return [];
+  if (array.length === 1) return array;
+  return [getFirst(array), getLast(array)];
   // TODO
 }
 
@@ -59,6 +64,11 @@ export function getFirstLast(array) {
  * sharesFirstLetter("cat", "dog"); // false
  */
 export function sharesFirstLetter(str1, str2) {
+  if (str1.length === 0 || str2.length === 0) {
+    return false;
+  } else {
+    return str1[0] === str2[0];
+  }
   // TODO
 }
 
