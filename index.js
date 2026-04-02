@@ -84,6 +84,11 @@ export function sharesFirstLetter(str1, str2) {
  * quintuple([]); // []
  */
 export function quintuple(numbers) {
+  let result = [];
+  for (let i = 0; i < numbers.length; i++) {
+    result.push(numbers[i] * 5);
+  }
+  return result;
   // TODO
 }
 
@@ -105,6 +110,12 @@ export function quintuple(numbers) {
  * pluralize([]); // []
  */
 export function pluralize(words) {
+  let plurals = [];
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    plurals.push(word.endsWith("s") ? word + "es" : word + "s");
+  }
+  return plurals;
   // TODO
 }
 
@@ -122,6 +133,11 @@ export function pluralize(words) {
  * countAttendance([]); // 0
  */
 export function countAttendance(attendance) {
+  let count = 0;
+  for (let i = 0; i < attendance.length; i++) {
+    if (attendance[i]) count++;
+  }
+  return count;
   // TODO
 }
 
@@ -138,6 +154,14 @@ export function countAttendance(attendance) {
  * getLongestWord(["a", "ab", "abc"]); // "abc"
  */
 export function getLongestWord(sentence) {
+  if (sentence.length === 0) return null;
+  let longestWord = "";
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i].length > longestWord.length) {
+      longestWord = sentence[i];
+    }
+  }
+  return longestWord;
   // TODO
 }
 
@@ -155,6 +179,12 @@ export function getLongestWord(sentence) {
  * findSong([], "Midnight Drive"); // -1
  */
 export function findSong(playlist, song) {
+  for (let i = 0; i < playlist.length; i++) {
+    if (playlist[i] === song) {
+      return i;
+    }
+  }
+  return -1;
   // TODO
 }
 
@@ -172,5 +202,13 @@ export function findSong(playlist, song) {
  * findSpy([["tree","lamp"],["pigeon","guard"]]); // null
  */
 export function findSpy(map) {
+  for (let x = 0; x < map.length; x++) {
+    for (let y = 0; y < map[x].length; y++) {
+      if (map[x][y] === "spy") {
+        return [x, y];
+      }
+    }
+  }
+  return null;
   // TODO
 }
